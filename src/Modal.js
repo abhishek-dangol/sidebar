@@ -1,9 +1,10 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./Context";
 
 const Modal = () => {
   const { isModalOpen, closeModal } = useGlobalContext();
+
   return (
     <div
       className={`${
@@ -11,7 +12,7 @@ const Modal = () => {
       }`}
     >
       <div className="modal-container">
-        <h3>modal Content</h3>
+        <h3>Modal Content</h3>
         <button className="close-modal-btn" onClick={closeModal}>
           <FaTimes />
         </button>

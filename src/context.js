@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 
 const AppContext = React.createContext();
-
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,8 +25,8 @@ const AppProvider = ({ children }) => {
         isModalOpen,
         isSidebarOpen,
         openModal,
-        openSidebar,
         closeModal,
+        openSidebar,
         closeSidebar,
       }}
     >
@@ -36,9 +35,8 @@ const AppProvider = ({ children }) => {
   );
 };
 
-//custom hook
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
-export { AppContext, AppProvider };
+export { AppContext, AppProvider, useContext };
